@@ -35,7 +35,12 @@ class Empresa extends \yii\db\ActiveRecord
         return [
             [['rfc', 'nombre', 'telefono', 'encargado', 'domicilio'], 'required', 'message' => 'campo requerido'],
             [['telefono'], 'string', 'max' => 10 ,'message' => 'longitud invalida'],
-            [['telefono'], 'integer', 'message' => 'Solo se admiiten numeros'],
+            //[['telefono'], 'integer', 'message' => 'Solo se admiten numeros'],
+            [['telefono'],
+                'integer', 'min'=>1,
+                'message' => 'Solo se admiten números',
+                'tooSmall' => 'Solo se admiten números'
+            ],
             [['rfc'], 'string', 'max' => 20],
             [['nombre', 'encargado'], 'string', 'max' => 100],
             [['correo'], 'string', 'max' => 75],

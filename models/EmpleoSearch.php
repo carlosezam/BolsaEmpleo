@@ -18,7 +18,7 @@ class EmpleoSearch extends Empleo
     public function rules()
     {
         return [
-            [['id', 'vacantes', 'id_empresa'], 'integer'],
+            [['id', 'vacantes', 'id_empresa', 'id_municipio', 'active'], 'integer'],
             [['puesto', 'descripcion', 'domicilio'], 'safe'],
             [['salario'], 'number'],
         ];
@@ -58,19 +58,19 @@ class EmpleoSearch extends Empleo
             return $dataProvider;
         }
 
-
         // grid filtering conditions
-        $query->orFilterWhere([
+        $query->andFilterWhere([
             'id' => $this->id,
             'salario' => $this->salario,
             'vacantes' => $this->vacantes,
             'id_empresa' => $this->id_empresa,
+            'id_municipio' => $this->id_municipio,
+            'active' => $this->active,
         ]);
 
-
-        $query->orFilterWhere(['like', 'puesto', $this->puesto])
-            ->orFilterWhere(['like', 'descripcion', $this->descripcion])
-            ->orFilterWhere(['like', 'domicilio', $this->domicilio]);
+        $query->andFilterWhere(['like', 'puesto', $this->puesto])
+            ->andFilterWhere(['like', 'descripcion', $this->descripcion])
+            ->andFilterWhere(['like', 'domicilio', $this->domicilio]);
 
         return $dataProvider;
     }

@@ -34,16 +34,16 @@ class Empleo extends \yii\db\ActiveRecord
     {
         return [
             [
-                ['puesto', 'salario', 'descripcion', 'vacantes', 'id_empresa'],
-                    'required', 'message' => 'Campo requerido'
+                ['puesto', 'salario', 'descripcion' ,'vacantes', 'id_empresa', 'id_municipio'],
+                    'required', 'message' => 'Campo {attribute} requerido'
             ],
             [
                 ['salario'],
                     'number',   'message'=> 'El salario debe ser un número',
-                    'min' => 0, 'tooSmall' => 'Ingrese una cantidad positiva'
+                    'min' => 1, 'tooSmall' => 'Ingrese una cantidad positiva'
             ],
             [
-                ['vacantes', 'id_empresa'],
+                ['vacantes'],
                     'integer', 'message' => 'El numero de vacantes dede ser un entero',
                     'min' => 0, 'tooSmall' => 'el numero de vacantes debe ser positivo'
             ],
@@ -54,8 +54,23 @@ class Empleo extends \yii\db\ActiveRecord
                         'tooShort' => 'Al menos 5 caracteres',
                         'tooLong' => 'Maximo 50 caracteres'
             ],
-            [['descripcion', 'domicilio'], 'string', 'max' => 150],
-            [['id_empresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::className(), 'targetAttribute' => ['id_empresa' => 'id']],
+            [
+                ['active'], 'boolean'
+            ],
+            [
+                ['descripcion', 'domicilio'],
+                    'string', 'max' => 150
+            ],
+            [
+                ['id_empresa'],
+                    'exist', 'skipOnError' => true,
+                    'targetClass' => Empresa::className(), 'targetAttribute' => ['id_empresa' => 'id']
+            ],
+            [
+                ['id_municipio'],
+                'exist', 'skipOnError' => true,
+                'targetClass' => Municipios::className(), 'targetAttribute' => ['id_municipio' => 'id']
+            ],
         ];
     }
 
@@ -64,6 +79,7 @@ class Empleo extends \yii\db\ActiveRecord
      */
     public function attributeLabels()
     {
+
         return [
             'id' => 'ID',
             'puesto' => 'Puesto',
@@ -71,8 +87,12 @@ class Empleo extends \yii\db\ActiveRecord
             'descripcion' => 'Descripcion',
             'vacantes' => 'Vacantes',
             'domicilio' => 'Domicilio',
+            'active' => 'Disponible',
             'id_empresa' => 'Empresa',
+            'id_municipio' => 'Municipio',
         ];
+
+
     }
 
     /**
@@ -81,5 +101,10 @@ class Empleo extends \yii\db\ActiveRecord
     public function getEmpresa()
     {
         return $this->hasOne(Empresa::className(), ['id' => 'id_empresa']);
+    }
+
+    public function getMunicipio()
+    {
+        return $this->hasOne(Municipios::className(), ['id' => 'id_municipio']);
     }
 }

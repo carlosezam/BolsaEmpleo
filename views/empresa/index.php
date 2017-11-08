@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\bootstrap\Modal;
+use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EmpresaSearch */
@@ -33,8 +34,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?php //echo Html::a(Yii::t('app', 'Create Empresa'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-    <?= GridView::widget([
-        'layout' => "{items}\n{pager}\n{pager}",
+    <?php
+    Pjax::begin();
+    echo GridView::widget([
+        'layout' => "{items}\n{pager}",
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -52,7 +55,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
         ],
 
-    ]); ?>
+    ]);
+    Pjax::end();
+    ?>
 </div>
 
 

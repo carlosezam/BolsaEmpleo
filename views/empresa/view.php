@@ -19,10 +19,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
+                'confirm' => Yii::t('app', '¿Estas seguro de elimiar los datos de esta empresa?'),
                 'method' => 'post',
             ],
         ]) ?>
+        <?php echo Html::a(Yii::t('app', 'Caancelar'), ['index'], ['class' => 'btn btn-danger']) ?>
     </p>
 
     <?= DetailView::widget([

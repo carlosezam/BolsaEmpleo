@@ -34,7 +34,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'descripcion',
             'vacantes',
             'domicilio',
-            'id_empresa',
+            [ 'label' => 'Empresa', 'value' => $model->empresa->nombre],
+            [ 'label' => 'Municipio', 'value' => $model->municipio->nombre],
+            [ 'label' => 'Activo', 'value' => $model->active ? 'si' : 'no'],
+
         ],
     ]) ?>
 

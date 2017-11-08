@@ -7,12 +7,13 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'defaultRoute' => 'empresa',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'PPtxjRcMiVTmJ8gQL8Qx9jYCEUTkEQ5y',
             'parsers' => [
-                //'application/json' => 'yii\web\JsonParser',
+                'application/json' => 'yii\web\JsonParser',
             ]
         ],
         'cache' => [
@@ -59,7 +60,10 @@ $config = [
             'enableStrictParsing' => false,
             'showScriptName' => false,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'empresa']
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'empresa'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'empleo'],
+
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/usuarios']
             ],
         ],
         

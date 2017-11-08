@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Guardar') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         <?php if(isset($mode) == 'update'):?>
-            <?php echo Html::a(Yii::t('app', 'Caancelar'), ['index'], ['class' => 'btn btn-danger']) ?>
+            <?php echo Html::a(Yii::t('app', 'Cancelar'), ['index'], ['class' => 'btn btn-danger']) ?>
         <?php else: ?>
             <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancelar</button>
         <?php endif ?>

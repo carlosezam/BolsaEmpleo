@@ -46,10 +46,11 @@ AppAsset::register($this);
     $items = array();
     if( $is_admin )
     {
-        $items[] = ['label' => 'Home', 'url' => ['/site/index']];
+        //$items[] = ['label' => 'Home', 'url' => ['/site/index']];
         $items[] = ['label' => 'Usuarios', 'url' => ['/usuario/index']];
-        $items[] = ['label' => 'Empresas', 'url' => ['/empresa/index']];
         $items[] = ['label' => 'Empleos', 'url' => ['/empleo/index']];
+        $items[] = ['label' => 'Empresas', 'url' => ['/empresa/index']];
+
         $items[] = (    '<li>'
                         . Html::beginForm(['/site/logout'], 'post')
                         . Html::submitButton(

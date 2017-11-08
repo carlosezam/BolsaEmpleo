@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use yii\bootstrap\Modal;
+use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EmpleoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -13,27 +13,26 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="empleo-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
 
     <?php
-        $model_empleo = new app\models\Empleo();
+    // echo $this->render('_search', ['model' => $searchModel]);
 
-        Modal::begin([
-            'header' => '<h2>Datos del empleo</h2>',
-            'toggleButton' => ['label' => 'Nueva empleo', 'class' => 'btn btn-success']
-        ]);
+    $model = new app\models\Empleo();
 
-        echo $this->render('_form', ['model'=>$model_empleo]);
+    \yii\bootstrap\Modal::begin([
+        'header' => '<h2>Datos de la empresa</h2>',
+        'toggleButton' => ['label'=>'Nuevo empleo', 'class' => 'btn btn-success']
+    ]);
 
-        Modal::end();
+    echo $this->render('_form', ['model'=>$model]);
+
+    \yii\bootstrap\Modal::end();
 
     ?>
 
-    <p>
-        <?php // Html::a(Yii::t('app', 'Create Empleo'), ['create'], ['class' => 'btn btn-success'])
-        ?>
-    </p>
-    <?= GridView::widget([
+
+<?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -43,11 +42,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'puesto',
             'salario',
             'descripcion',
-            //'vacantes',
-            'domicilio',
+            'vacantes',
+            // 'domicilio',
             // 'id_empresa',
+            'id_municipio',
+            // 'active',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn',
+
+            ],
         ],
     ]); ?>
-</div>
+<?php Pjax::end(); ?></div>

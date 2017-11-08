@@ -91,5 +91,19 @@ class Usuario extends ActiveRecord implements IdentityInterface
         return true;
     }
 
+    public function rules()
+    {
+        return [
+            [['username','email','password'], 'required', 'message' => 'campo requerido'],
+            [['email','username'], 'unique', 'message' => 'El {attribute} {value} ya se encuentra registrado'],
+
+            ['username', 'string', 'length' => [5,20], 'message' => 'longitud inadecuada. min 5, max 20' ],
+            ['username', 'match', 'pattern' => '/^[0-9a-z._-]+$/i', 'message' => 'Solo se aceptan letras, números, puntos y guinoes'],
+
+            ['email', 'email', 'message' => 'Ingresa un correo valido'],
+            ['password', 'string', 'length' => [8,30], 'message' => 'longitud inadecuada. min 8, max 30'],
+        ];
+
+    }
 
 }

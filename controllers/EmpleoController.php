@@ -5,10 +5,11 @@ namespace app\controllers;
 use Yii;
 use app\models\Empleo;
 use app\models\EmpleoSearch;
-use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
+use yii\widgets\ActiveForm;
 
 /**
  * EmpleoController implements the CRUD actions for Empleo model.
@@ -21,22 +22,6 @@ class EmpleoController extends Controller
     public function behaviors()
     {
         return [
-            'accesss' => [
-                'class' => AccessControl::className(),
-                'only' => ['index','view','create','update','delete'],
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'actions' => ['index'],
-                        'roles' => ['@']
-                    ],
-                    [
-                        'allow' => true,
-                        'roles' =>['admin']
-                    ]
-                ]
-
-            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -81,9 +66,15 @@ class EmpleoController extends Controller
     public function actionCreate()
     {
         $model = new Empleo();
+        $model->load(Yii::$app->request->post());
 
+        if(Yii::$app->request->isAjax)
+        {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect('empleo/index');
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -100,9 +91,14 @@ class EmpleoController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
+        $model->load(Yii::$app->request->post());
+        if(Yii::$app->request->isAjax)
+        {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect('index');
         } else {
             return $this->render('update', [
                 'model' => $model,
