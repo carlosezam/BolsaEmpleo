@@ -63,7 +63,8 @@ $config = [
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'empresa'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'empleo'],
 
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/usuarios']
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/usuarios'],
+
             ],
         ],
         
