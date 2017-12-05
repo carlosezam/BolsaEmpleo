@@ -49,7 +49,7 @@ class Empleo extends \yii\db\ActiveRecord
             ],
             [
                 ['puesto'],
-                    'string', 'message' => 'El puestod debe ser un texto',
+                    'string', 'message' => 'El puesto debe ser un texto',
                     'length' => [5,50],
                         'tooShort' => 'Al menos 5 caracteres',
                         'tooLong' => 'Maximo 50 caracteres'

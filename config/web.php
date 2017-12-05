@@ -8,6 +8,11 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'defaultRoute' => 'empresa',
+    'modules' => [
+        'gridview' => [
+            'class' => 'kartik\grid\Module'
+        ],
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -19,6 +24,7 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        
 
         'user' => [
             'identityClass' => 'app\models\Usuario',

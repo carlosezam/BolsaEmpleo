@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'salario')->textInput() ?>
 
-    <?= $form->field($model, 'descripcion')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'descripcion')->textarea(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'vacantes')->textInput() ?>
 

@@ -73,7 +73,8 @@ class Persona extends \yii\db\ActiveRecord
             ],
             [
                 ['edo_civil'],
-                    'in', 'range' => ['casado(a)','soltero(a)'], 'message' => 'Estado civil invalido'
+                    'in', 'range' => ["soltero(a)", "casado(a)", "divorciado(a)", "viudo(a)", "union libre"],
+                        'message' => 'Estado civil invalido'
             ],
             [
                 ['licencia'],
