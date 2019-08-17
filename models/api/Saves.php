@@ -53,6 +53,7 @@ class Saves extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'id',
+            'id_empleo' => 'id_empleo',
             'empleo' => function() { return $this->empleo->puesto; },
             'empresa' => function() {
                 $empleo = $this->empleo;

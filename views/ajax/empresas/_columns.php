@@ -16,35 +16,27 @@ return [
     // ],
     [
         'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'puesto',
+        'attribute'=>'rfc',
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'salario',
+        'attribute'=>'nombre',
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'descripcion',
+        'attribute'=>'telefono',
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'vacantes',
+        'attribute'=>'correo',
     ],
     [
         'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'domicilio',
+        'attribute'=>'encargado',
     ],
     // [
         // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'id_empresa',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'id_municipio',
-    // ],
-    // [
-        // 'class'=>'\kartik\grid\DataColumn',
-        // 'attribute'=>'active',
+        // 'attribute'=>'domicilio',
     // ],
     [
         'class' => 'kartik\grid\ActionColumn',

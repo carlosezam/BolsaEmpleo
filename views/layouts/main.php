@@ -54,14 +54,14 @@ AppAsset::register($this);
         $items[] = (    '<li>'
                         . Html::beginForm(['/site/logout'], 'post')
                         . Html::submitButton(
-                            'Logout (' . Yii::$app->user->identity->username . ')',
+                            'Salir (' . Yii::$app->user->identity->username . ')',
                             ['class' => 'btn btn-link logout']
                         )
                         . Html::endForm()
                         . '</li>'
                     );
     } else {
-        $items[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $items[] = ['label' => 'Iniciar', 'url' => ['/site/login']];
     }
 
 
@@ -87,9 +87,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; ITTAP <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right"></p>
     </div>
 </footer>
 

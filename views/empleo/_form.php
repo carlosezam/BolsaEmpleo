@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 
 <div class="empleo-form">
 
-    <?php $form = ActiveForm::begin(['enableAjaxValidation'=>true]); ?>
+    <?php $form = ActiveForm::begin(['enableAjaxValidation'=>true, 'enableClientValidation'=>false]); ?>
 
     <?= $form->field($model, 'puesto')->textInput(['maxlength' => true]) ?>
 
@@ -29,7 +29,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'active')->checkbox() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Guardar') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         <?= Html::a(Yii::t('app', 'Cancelar'), ['/empleo'], ['class' => 'btn btn-danger']) ?>
     </div>
 

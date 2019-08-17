@@ -4,10 +4,10 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\models\api\Empleos */
+/* @var $model app\models\ajax\Empresas */
 
 ?>
-<div class="empleos-create">
+<div class="empresas-create">
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

@@ -31,10 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
     ?>
 
-
+<br>
+    <br>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'layout' => '{items}{pager}',
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 

@@ -7,6 +7,7 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'language'=>'es', // spanish
     'defaultRoute' => 'empresa',
     'modules' => [
         'gridview' => [

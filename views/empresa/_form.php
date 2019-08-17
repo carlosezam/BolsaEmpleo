@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 
 <div class="empresa-form">
 
-    <?php $form = ActiveForm::begin(['enableAjaxValidation' => true]); ?>
+    <?php $form = ActiveForm::begin(['enableAjaxValidation' => true, 'enableClientValidation'=>false]); ?>
 
     <?= $form->field($model, 'rfc')->textInput(['maxlength' => true]) ?>
 
@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'domicilio')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Guardar') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Guardar') : Yii::t('app', 'Actualizar'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         <?php if(isset($mode) == 'update'):?>
             <?php echo Html::a(Yii::t('app', 'Cancelar'), ['index'], ['class' => 'btn btn-danger']) ?>
         <?php else: ?>

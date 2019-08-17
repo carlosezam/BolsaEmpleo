@@ -32,7 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
             //'accessToken',
             //'active',
 
-            //['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{delete}',
+            ],
         ],
     ]); ?>
 </div>
