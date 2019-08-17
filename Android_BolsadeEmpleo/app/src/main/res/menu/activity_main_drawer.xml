@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="Curriculum Vitae">
+        <menu>
+            <item
+                android:id="@+id/nav_personal"
+                android:icon="@drawable/accout_circle"
+                android:title="Informacion personal" />
+            <item
+                android:id="@+id/nav_educacion"
+                android:icon="@drawable/ic_school"
+                android:title="Educación y Formación" />
+
+            <item
+                android:id="@+id/nav_laboral"
+                android:icon="@drawable/ic_work"
+                android:title="Experiencia Laboral" />
+            <item
+                android:id="@+id/nav_idiomas"
+                android:icon="@drawable/ic_public"
+                android:title="Idiomas" />
+            <item
+                android:id="@+id/nav_competencias"
+                android:icon="@drawable/ic_golf_course"
+                android:title="Competencias" />
+            <item
+                android:id="@+id/nav_cursos"
+                android:icon="@drawable/ic_local_library"
+                android:title="Cursos Técnicos" />
+        </menu>
+    </item>
+
+
+    <item
+        android:id="@+id/nav_saves"
+        android:icon="@drawable/ic_favorites"
+        android:title="Guardados"
+        />
+
+    <item
+        android:id="@+id/nav_pdf"
+        android:icon="@drawable/ic_download"
+        android:title="Descargar PDF" />
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_exit"
+            android:title="Cerrar Sesión" />
+    </group>
+
+
+</menu>

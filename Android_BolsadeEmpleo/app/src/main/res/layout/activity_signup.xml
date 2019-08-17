@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layaout_signup"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ittap.bolsadeempleo.SignupActivity">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+
+        android:layout_centerInParent="true"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registro"
+            android:textSize="24dp"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            />
+
+        <EditText
+            android:id="@+id/editText_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre de usuario"
+            android:inputType="text"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <EditText
+            android:id="@+id/editText_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Coreo electrónico"
+            android:inputType="text"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <EditText
+            android:id="@+id/editText_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <EditText
+            android:id="@+id/editText_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirmación"
+            android:inputType="textPassword"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            />
+
+
+        <Button
+            android:id="@+id/button_singup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            android:text="Registrar"
+            />
+
+        <TextView
+            android:id="@+id/textview_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            android:text="¿Ya tienes una cuenta?\n¡Inicia sesion aquí!"
+            android:textAlignment="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressbar_singup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

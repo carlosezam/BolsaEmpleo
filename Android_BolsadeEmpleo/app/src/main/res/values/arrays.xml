@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="escolar_niveles">
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Preparatoria</item>
+        <item>Universidad</item>
+        <item>Posgrado</item>
+    </string-array>
+</resources>

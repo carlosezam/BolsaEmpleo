@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ittap.bolsadeempleo.DetailsEmpleoActivity">
+
+    <LinearLayout
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Puesto"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/empleo_puesto"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:text="..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:text="Salario Mensual"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/empleo_salario"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:text="$..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+
+
+        <TextView
+            android:text="Descripcion o actividades"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/empleo_descripcion"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:text="..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:text="Vacantes"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/empleo_vacantes"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:text="Empresa"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/empleo_Empresa"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:text="..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:text="Contacto"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/empleo_contacto"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:text="..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+
+
+        <TextView
+            android:text="Domicilio"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/empleo_domicilio"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:text="6a Av Sur, 8va norte #35 Col centro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:text="Municipio"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/empleo_municipio"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:text="Tapachula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:text="Disponible"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/empleo_active"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:text="Si"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+        </LinearLayout>
+</ScrollView>
