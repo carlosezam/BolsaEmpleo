@@ -1,4 +1,4 @@
-# BolsaEmpleo
+## BolsaEmpleo
 
 Este proyecto es un prototipo de una bolsa de empleo.
 
